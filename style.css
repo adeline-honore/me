@@ -1,0 +1,263 @@
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX       GLOBAL     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Parie 1 : global (redefinition de balises)*/
+/*=======   BOX SIZING  pour retirer heritage marges et padding  =============*/
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+html{
+    font-size: 62.5%; /* ---  valeur habituelle  ---*/
+}
+
+body{
+    padding: 0;
+    margin: 0 auto;
+    font-size: 1.6rem;
+}
+/*------------   font family  et font size    ------------*/
+
+body{
+    font-family: 'Quicksand', sans-serif;
+}
+
+h1, h2, h3, header p, header nav a{
+    font-family: 'Parisienne', cursive;
+
+    font-family: 'Amaranth', sans-serif;
+}
+
+h1, main i{
+    font-size: 4rem;
+}
+
+h2{
+    font-size: 3rem;
+}
+
+header a, h3{
+    font-size: 2rem;
+}
+
+a{
+    text-decoration: none;
+}
+
+header, img{
+    width: 100%;
+}
+
+/*------------   text align, padding, margin     ------------*/
+main, section, #galerie_m, #projets article{
+    margin: 0 auto;
+}
+
+header nav, h1, main section:first-child p, h2{
+    text-align: center;
+}
+
+#grid a, #grid img{
+    display: block;
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX     LAYOUT     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Partie 2 : Layout (definition des éléments de structures)*/
+
+/*------------   HEADER      ------------*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 120px;
+}
+
+header nav{
+    margin-top: 60px;
+}
+
+main section:first-child{
+    margin-top: 110px;
+}
+
+/*------------   MAIN      ------------*/
+
+main{
+    margin-top: 10px;
+}
+
+section{
+    padding: 3rem;
+    margin: 3rem auto;
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX     MODULE    XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Partie 3 : module (definition des éléments internes)*/
+
+/*------------   HEADER      ------------*/
+
+header .fas{
+    display: block;
+}
+
+header a{
+    display: inline-block;
+    margin: 10px;
+
+}
+/*------------   MAIN      ------------*/
+
+/*------------   SECTION PROJETS      ------------*/
+
+#projets article{
+  width: 90%;
+}
+
+#projets img{
+    border: 2px solid #77ADBA;
+}
+
+#projets article:after{
+  content: "";
+  color: green;
+  height: 2px;
+  width: 100%;
+}
+
+#projets article a{
+    display: inline-block;
+    float: right;
+    width : 50%;
+    margin: 5rem 0 1rem 2rem;
+}
+
+#projets article:nth-of-type(odd) a{
+    display: inline-block;
+    float: left;
+    width : 50%;
+    margin: 5rem 2rem 1rem 0;
+}
+
+/*------------   SECTION suite de Projet      ------------*/
+
+
+#grid{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(10px, auto);
+}
+
+#grid a:nth-of-type(1) {
+  grid-column: 1;
+  grid-row: 1;
+}
+#grid a:nth-of-type(2) { 
+  grid-column: 2;
+  grid-row: 1 ;
+}
+#grid a:nth-of-type(3) {
+  grid-column: 3;
+  grid-row: 1;
+}
+#grid a:nth-of-type(4) {
+  grid-column: 2;
+  grid-row: 2;
+}
+#grid a:nth-of-type(1) {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+/*------------   SECTION COMPETENCES      ------------*/
+
+section, #galerie_m{
+    clear: both;
+}
+
+#upImag{
+    width: 306px;
+    height: 306px
+}
+
+
+
+#contact img{
+    width: 100px;
+}
+
+
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX    ETAT     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Partie 4 : état (definition des élémentS qui ont un état spécifique ou un changement d'état)*/
+
+header a:hover{
+    color: #F0899A;
+}
+
+header a:hover i{
+    color: #1D424B;
+}
+
+#galerie_m:hover td{
+    opacity: 0.3;
+}
+
+
+/*
+#galerie_m:hover td:not(#upImag, :hover){
+    opacity: 0.3;
+}
+*/
+
+#galerie_m:hover td:hover, #galerie_m:hover #upImag{
+    opacity: 1;
+}
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXXXXXXXXXXXX     THEME     XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+Parie 5 : theme (definition des couleurs et background)    */
+
+header{
+    background-color: rgba(136, 139, 140, 0.97);
+}
+
+header a, h1, main section:first-child p{
+    color: white;
+}
+
+body, address a{
+    color: black;
+}
+
+main section:first-child{
+    background-color: #3f87a6;
+}
+
+
+
+/*XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+XXXXXXXXXXXXXXXXXX     MEDIA QUERIES (ne noter que les changements)    XXXXXXXXXXXXXXXXXXXXXXXXX*/
+
+/*XXXXXXXXXXXXXXXXX   TABLETTE  XXXXXXXXXXXXXXXXXXXXXX*/
+@media screen and (min-width: 600px){
+
+    body{
+    background: linear-gradient( #3f87a6, #ebf8e1, #f69d3c);
+    }
+
+    section{
+        width: 80%;
+        background-color: white;
+    }
+
+}
+
+
